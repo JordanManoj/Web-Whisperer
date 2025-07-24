@@ -36,7 +36,7 @@ def scrape_page(url, index, progress_callback=None):
         text = soup.get_text(separator=' ', strip=True)
         wrapped_text = textwrap.fill(text, width=100)
 
-        # Markdown report section
+        # to save as markdown report
         report_section = f"""
 ## {index}. {title}
 
@@ -51,7 +51,7 @@ def scrape_page(url, index, progress_callback=None):
 """
         report.append(report_section)
 
-        # Save individual txt file
+        # to save as txt file
         filename = f"{index:02d}_{sanitize_filename(title)}.txt"
         full_path = os.path.join(OUTPUT_DIR, filename)
         with open(full_path, "w", encoding="utf-8") as f:
@@ -96,7 +96,7 @@ def zip_text_files():
                 zipf.write(os.path.join(OUTPUT_DIR, file), arcname=file)
     return zip_path
 
-# ------------------ STREAMLIT UI --------------------
+#STREAMLIT UI 
 
 st.set_page_config(page_title="Web Scraper App", layout="centered")
 st.title("🌐 Website Scraper")
