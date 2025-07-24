@@ -10,4 +10,3 @@ sentence-transformers
 faiss-cpu
 PyMuPDF
 python-docx
-dataclasses
