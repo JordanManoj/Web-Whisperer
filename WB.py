@@ -99,7 +99,7 @@ def zip_text_files():
 #STREAMLIT UI 
 
 st.set_page_config(page_title="Web Scraper App", layout="centered")
-st.title("🌐 Website Scraper")
+st.title("Website Scraper")
 
 with st.form("scraper_form"):
     url = st.text_input("Enter website URL", value="https://example.com")
@@ -129,7 +129,7 @@ if submit:
             st.markdown(f.read())
 
         with open(markdown_report, "rb") as f:
-            st.download_button("📄 Download Markdown Report", f, file_name="scraped_report.md")
+            st.download_button("Download Markdown Report", f, file_name="scraped_report.md")
 
     # Zip and offer download of .txt files
     zip_path = zip_text_files()
